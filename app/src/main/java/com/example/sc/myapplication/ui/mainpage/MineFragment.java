@@ -1,10 +1,14 @@
 package com.example.sc.myapplication.ui.mainpage;
 
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sc.myapplication.R;
+import com.example.sc.myapplication.ui.TestActivity;
 import com.example.sc.myapplication.widget.GlideImageLoader;
 import com.llf.basemodel.base.BaseFragment;
 import com.youth.banner.Banner;
@@ -25,6 +29,8 @@ public class MineFragment extends BaseFragment {
 
     @Bind(R.id.banner)
     Banner banner;
+    @Bind(R.id.tv_click)
+    TextView tv_click;
 
     public static final String[] BANNER_IMGS =
             {
@@ -105,6 +111,12 @@ public class MineFragment extends BaseFragment {
             @Override
             public void OnBannerClick(int position) {
                 Toast.makeText(getActivity(),"点击了第"+position+"个位置!",Toast.LENGTH_SHORT).show();
+            }
+        });
+        tv_click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), TestActivity.class));
             }
         });
     }
