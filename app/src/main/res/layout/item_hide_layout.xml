@@ -3,7 +3,7 @@
     android:background="#bcb9b9"
     android:id="@+id/ll_hide"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="match_parent"
     android:orientation="horizontal"
     android:visibility="gone">
 
@@ -13,7 +13,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="加密" />
+            android:text="加密" android:visibility="gone"/>
 
             <TextView
             android:id="@+id/hide_2"
@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="解密" />
+            android:text="解密" android:visibility="gone"/>
 
             <TextView
             android:id="@+id/hide_3"
@@ -29,7 +29,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="分享" />
+            android:text="分享" android:visibility="gone"/>
 
             <TextView
             android:id="@+id/hide_4"
@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="删除" />
+            android:text="删除" android:visibility="gone"/>
 
             <TextView
             android:id="@+id/hide_5"
@@ -45,5 +45,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="属性" />
+            android:text="属性" android:visibility="gone"/>
+    <ListView
+        android:layout_width="match_parent" android:id="@+id/sub_listview"
+        android:layout_height="match_parent"></ListView>
     </LinearLayout>

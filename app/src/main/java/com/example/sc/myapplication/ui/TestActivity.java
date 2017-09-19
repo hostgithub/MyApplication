@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sc.myapplication.R;
+import com.example.sc.myapplication.ui.mainpage.SubAdapter;
+import com.example.sc.myapplication.widget.Utility;
 import com.llf.basemodel.base.BaseActivity;
 
 import java.util.ArrayList;
@@ -40,8 +42,10 @@ public class TestActivity extends BaseActivity {
 
     private MyAdapter adapter;
 
-    class MyAdapter extends BaseAdapter implements View.OnClickListener {
+    class MyAdapter extends BaseAdapter{
 
+        private ArrayList<String> sublist;
+        private SubAdapter subAdapter;
 
         @Override
         public int getCount() {
@@ -73,6 +77,7 @@ public class TestActivity extends BaseActivity {
             if (clickPosition == position) {//当条目为刚才点击的条目时
                 if (vh.selectorImg.isSelected()) {//当条目状态图标为选中时，说明该条目处于展开状态，此时让它隐藏，并切换状态图标的状态。
                     vh.selectorImg.setSelected(false);
+                    vh.selectorImg.setImageResource(R.drawable.show_icon);
                     vh.ll_hide.setVisibility(View.GONE);
                     Log.e("listview","if执行");
                     clickPosition=-1;//隐藏布局后需要把标记的position去除掉，否则，滑动listview让该条目划出屏幕范围，
@@ -80,6 +85,7 @@ public class TestActivity extends BaseActivity {
                     //因为每次滑动的时候没标记得position填充会执行click
                 } else {//当状态条目处于未选中时，说明条目处于未展开状态，此时让他展开。同时切换状态图标的状态。
                     vh.selectorImg.setSelected(true);
+                    vh.selectorImg.setImageResource(R.drawable.hint_icon);
                     vh.ll_hide.setVisibility(View.VISIBLE);
 
                     Log.e("listview","else执行");
@@ -94,15 +100,25 @@ public class TestActivity extends BaseActivity {
                 //每次滑动的时候没标记得position填充会执行此处，把状态改变。所以如果在以上的if (vh.selectorImg.isSelected()) {}中不设置clickPosition=-1；则条目再次进入屏幕后，还是会进入clickposition==position的逻辑中
                 //而之前的滑动（未标记条目的填充）时，执行此处逻辑，已经把状态图片的selected置为false。所以上面的else中的逻辑会在标记过的条目第二次进入屏幕时执行，如果之前的状态是显示，是没什么影响的，再显示一次而已，用户看不出来，但是如果是隐藏状态，就会被重新显示出来
                 vh.ll_hide.setVisibility(View.GONE);
+                vh.selectorImg.setImageResource(R.drawable.show_icon);
                 vh.selectorImg.setSelected(false);
 
                 Log.e("listview","状态改变");
             }
-            vh.hide_1.setOnClickListener(this);
-            vh.hide_2.setOnClickListener(this);
-            vh.hide_3.setOnClickListener(this);
-            vh.hide_4.setOnClickListener(this);
-            vh.hide_5.setOnClickListener(this);
+//            vh.hide_1.setOnClickListener(this);
+//            vh.hide_2.setOnClickListener(this);
+//            vh.hide_3.setOnClickListener(this);
+//            vh.hide_4.setOnClickListener(this);
+//            vh.hide_5.setOnClickListener(this);
+
+            sublist = new ArrayList<>();
+            for (int i = 0; i < 10; i++) {
+                sublist.add("我是第" + i + "个子条目");
+            }
+            subAdapter = new SubAdapter(sublist,TestActivity.this);
+            vh.subListView.setAdapter(subAdapter);
+            Utility.setListViewHeightBasedOnChildren(vh.subListView);
+
             vh.selectorImg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -117,47 +133,48 @@ public class TestActivity extends BaseActivity {
             return convertView;
         }
 
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.hide_1:
-                    Toast.makeText(TestActivity.this, "加密", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.hide_2:
-                    Toast.makeText(TestActivity.this, "解密", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.hide_3:
-                    Toast.makeText(TestActivity.this, "分享", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.hide_4:
-                    Toast.makeText(TestActivity.this, "删除", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.hide_5:
-                    Toast.makeText(TestActivity.this, "属性", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        }
+//        @Override
+//        public void onClick(View v) {
+//            switch (v.getId()) {
+//                case R.id.hide_1:
+//                    Toast.makeText(TestActivity.this, "加密", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case R.id.hide_2:
+//                    Toast.makeText(TestActivity.this, "解密", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case R.id.hide_3:
+//                    Toast.makeText(TestActivity.this, "分享", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case R.id.hide_4:
+//                    Toast.makeText(TestActivity.this, "删除", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case R.id.hide_5:
+//                    Toast.makeText(TestActivity.this, "属性", Toast.LENGTH_SHORT).show();
+//                    break;
+//            }
+//        }
 
 
         class MyViewHolder {
             View itemView;
             TextView tv_test;
             TextView hide_1, hide_2, hide_3, hide_4, hide_5;
+            ListView subListView;
             ImageView selectorImg;
             LinearLayout ll_hide;
 
             public MyViewHolder(View itemView) {
                 this.itemView = itemView;
                 tv_test = (TextView) itemView.findViewById(R.id.tv_test);
-                selectorImg = (ImageView) itemView.findViewById(R.id.checkbox);
-                hide_1 = (TextView) itemView.findViewById(R.id.hide_1);
-                hide_2 = (TextView) itemView.findViewById(R.id.hide_2);
-                hide_3 = (TextView) itemView.findViewById(R.id.hide_3);
-                hide_4 = (TextView) itemView.findViewById(R.id.hide_4);
-                hide_5 = (TextView) itemView.findViewById(R.id.hide_5);
+                selectorImg = (ImageView) itemView.findViewById(R.id.imageview);
+//                hide_1 = (TextView) itemView.findViewById(R.id.hide_1);
+//                hide_2 = (TextView) itemView.findViewById(R.id.hide_2);
+//                hide_3 = (TextView) itemView.findViewById(R.id.hide_3);
+//                hide_4 = (TextView) itemView.findViewById(R.id.hide_4);
+//                hide_5 = (TextView) itemView.findViewById(R.id.hide_5);
                 ll_hide = (LinearLayout) itemView.findViewById(R.id.ll_hide);
+                subListView = (ListView) itemView.findViewById(R.id.sub_listview);
             }
         }
     }
-
 }

@@ -7,7 +7,7 @@ android {
         applicationId "com.example.sc.myapplication"
         minSdkVersion 11
         targetSdkVersion 25
-        versionCode 1
+        versionCode 9
         versionName "1.2.7"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
