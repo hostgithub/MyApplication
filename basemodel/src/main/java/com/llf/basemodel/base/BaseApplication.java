@@ -26,7 +26,6 @@ public class BaseApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         instance = this;
-
         CrashReport.initCrashReport(getApplicationContext());
         //检查内存泄漏
         refWatcher = LeakCanary.install(this);

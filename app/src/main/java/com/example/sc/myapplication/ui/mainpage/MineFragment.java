@@ -8,9 +8,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sc.myapplication.R;
+import com.example.sc.myapplication.ui.BaiduMapActivity;
+import com.example.sc.myapplication.ui.LoginTestActivity;
 import com.example.sc.myapplication.ui.TestActivity;
 import com.example.sc.myapplication.widget.GlideImageLoader;
 import com.llf.basemodel.base.BaseFragment;
+import com.llf.basemodel.commonactivity.SpinnerActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -31,6 +34,14 @@ public class MineFragment extends BaseFragment {
     Banner banner;
     @Bind(R.id.tv_click)
     TextView tv_click;
+    @Bind(R.id.tv_pic)
+    TextView tv_pic;
+    @Bind(R.id.tv_map)
+    TextView tv_map;
+    @Bind(R.id.tv_login_test)
+    TextView tv_login_test;
+    @Bind(R.id.tv_map_poi)
+    TextView tv_map_poi;
 
     public static final String[] BANNER_IMGS =
             {
@@ -117,6 +128,31 @@ public class MineFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 getActivity().startActivity(new Intent(getActivity(), TestActivity.class));
+            }
+        });
+
+        tv_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), SpinnerActivity.class));
+            }
+        });
+        tv_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), BaiduMapActivity.class));
+            }
+        });
+        tv_login_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), LoginTestActivity.class));
+            }
+        });
+        tv_map_poi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), BaiduMapTestActivity.class));
             }
         });
     }

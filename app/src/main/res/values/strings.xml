@@ -17,7 +17,8 @@
     <string name="fragment_picture">列表</string>
     <string name="fragment_music">音乐</string>
     <string name="transition_news_img">transition_news_img</string>
-
+    <string name="login">登    录</string>
+    <string name="bq_tip">版权所有©黑龙江省高级人民法院</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -5,12 +5,28 @@ android {
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.example.sc.myapplication"
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 25
-        versionCode 9
+        versionCode 10
         versionName "1.2.7"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    //数字签名证书以及密钥温家的配置 可以在以后不同的渠道设置
+    signingConfigs {
+        release {
+            keyAlias 'keyjms'
+            keyPassword '944395'
+            storeFile file('../jmsGov.jks')
+            storePassword '944395'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
     }
     buildTypes {
         release {
@@ -28,15 +44,17 @@ dependencies {
     compile project(':basemodel')
     compile files('libs/open_sdk_r5788.jar')
     compile files('libs/libammsdk.jar')
+    compile files('libs/BaiduLBS_Android.jar')
     //前置检查
     //在网页上查看sp和数据库 adb forward tcp:8080 tcp:8080
     //检查过渡绘制
+    //最新版本
+    //compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0'
     compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
     compile 'com.google.guava:guava:18.0'
     compile 'com.jakewharton.scalpel:scalpel:1.1.2'
-    debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
-    compile 'com.youth.banner:banner:1.4.9'  //最新版本
-    //compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.youth.banner:banner:1.4.9'
     compile 'com.facebook.fresco:fresco:0.12.0'
+    debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
 }

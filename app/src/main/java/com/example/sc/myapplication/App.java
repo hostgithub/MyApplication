@@ -3,7 +3,7 @@ package com.example.sc.myapplication;
 import android.os.Build;
 import android.os.StrictMode;
 
-import com.amitshekhar.DebugDB;
+import com.baidu.mapapi.SDKInitializer;
 import com.llf.basemodel.base.BaseApplication;
 
 /**
@@ -13,6 +13,8 @@ import com.llf.basemodel.base.BaseApplication;
 public class App extends BaseApplication {
     @Override
     public void onCreate() {
+        SDKInitializer.initialize(getApplicationContext());
+
         super.onCreate();
         /**
          * 解决7.0无法使用file://格式的URI的第二种方法
@@ -22,7 +24,7 @@ public class App extends BaseApplication {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
             builder.detectFileUriExposure();
         }
-        DebugDB.getAddressLog();
+        //DebugDB.getAddressLog();
     }
 
     /**

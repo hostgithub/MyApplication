@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="#ff1797e9" android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingLeft="40.0dip" android:paddingRight="40.0dip" android:layout_width="fill_parent" android:layout_height="260.0dip">
+        <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/logo" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:background="@drawable/content_bg" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" android:layout_weight="55.0">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/homeLyt" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <TextView android:layout_gravity="center_vertical" android:background="@drawable/person" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="10.0dip" />
+            <View android:background="#19ffffff" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" />
+            <EditText android:textSize="16.0sp" android:textColor="#ffffffff"
+                android:textColorHint="#ffffffff" android:gravity="center|left"
+                android:id="@+id/login_phoneNumber" android:background="@android:color/transparent"
+                android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:layout_marginLeft="10.0dip" android:hint="请输入帐号" android:singleLine="true" android:maxLength="30" />
+        </LinearLayout>
+        <View android:background="#19ffffff" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <TextView android:background="@drawable/key" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="10.0dip" />
+            <View android:background="#19ffffff" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" />
+            <EditText android:textSize="16.0sp" android:textColor="#ffffffff"
+                android:textColorHint="#ffffffff" android:gravity="center|left" android:id="@+id/login_password"
+                android:background="@android:color/transparent" android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:hint="请输入密码"
+                android:password="true" android:singleLine="true" android:maxLength="20" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginLeft="40.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="40.0dip">
+        <CheckBox android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@+id/checkBox1"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="记住密码" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:paddingLeft="40.0dip" android:paddingTop="5.0dip"
+        android:paddingRight="40.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip"
+        android:layout_marginTop="15.0dip" android:layout_weight="60.0">
+        <Button android:textSize="16.0sp" android:textColor="@android:color/white"
+            android:id="@+id/id_loginBtn" android:background="@drawable/content_bg"
+            android:layout_width="fill_parent" android:layout_height="50.0dip"
+            android:text="@string/login" android:onClick="myOnclick" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="60.0dip">
+        <Button android:textSize="14.0sp" android:textColor="@android:color/white"
+            android:layout_gravity="center" android:id="@+id/id_loginTv"
+            android:background="@android:color/transparent" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/bq_tip"/>
+    </LinearLayout>
+</LinearLayout>

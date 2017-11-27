@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
     tools:context="com.example.sc.myapplication.ui.TestActivity">
 
     <com.youth.banner.Banner
@@ -13,6 +13,24 @@
         android:layout_height="200dp"/>
 
     <TextView android:gravity="center"  android:text="@string/welcome"
-        android:layout_width="wrap_content" android:layout_centerInParent="true"
+        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content" android:id="@+id/tv_click"/>
-</RelativeLayout>
+
+    <TextView android:gravity="center"  android:text="拍照拍照拍照拍照"
+        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tv_click" android:layout_marginTop="15dp"
+        android:layout_height="wrap_content" android:id="@+id/tv_pic"/>
+
+    <TextView android:gravity="center"  android:text="百度地图定位"
+        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tv_pic" android:layout_marginTop="15dp"
+        android:layout_height="wrap_content" android:id="@+id/tv_map"/>
+    <TextView android:gravity="center"  android:text="百度地图定位搜索周边"
+        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tv_pic" android:layout_marginTop="15dp"
+        android:layout_height="wrap_content" android:id="@+id/tv_map_poi"/>
+    <TextView android:gravity="center"  android:text="登录测试"
+        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tv_map" android:layout_marginTop="15dp"
+        android:layout_height="wrap_content" android:id="@+id/tv_login_test"/>
+</LinearLayout>
