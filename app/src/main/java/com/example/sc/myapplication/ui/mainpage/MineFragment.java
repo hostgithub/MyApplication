@@ -10,10 +10,11 @@ import android.widget.Toast;
 import com.example.sc.myapplication.R;
 import com.example.sc.myapplication.ui.BaiduMapActivity;
 import com.example.sc.myapplication.ui.LoginTestActivity;
-import com.example.sc.myapplication.ui.SubListShowHideActivity;
+import com.example.sc.myapplication.ui.record.RecordActivity;
+import com.example.sc.myapplication.ui.SubListActivity;
 import com.example.sc.myapplication.widget.GlideImageLoader;
 import com.llf.basemodel.base.BaseFragment;
-import com.llf.basemodel.commonactivity.SpinnerActivity;
+import com.llf.basemodel.commonactivity.TakePhotoActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -42,6 +43,8 @@ public class MineFragment extends BaseFragment {
     TextView tv_login_test;
     @Bind(R.id.tv_map_poi)
     TextView tv_map_poi;
+    @Bind(R.id.tv_record)
+    TextView tv_record;
 
     public static final String[] BANNER_IMGS =
             {
@@ -124,17 +127,19 @@ public class MineFragment extends BaseFragment {
                 Toast.makeText(getActivity(),"点击了第"+position+"个位置!",Toast.LENGTH_SHORT).show();
             }
         });
+
+
         tv_click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getActivity(), SubListShowHideActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), SubListActivity.class));
             }
         });
 
         tv_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getActivity(), SpinnerActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), TakePhotoActivity.class));
             }
         });
         tv_map.setOnClickListener(new View.OnClickListener() {
@@ -153,6 +158,12 @@ public class MineFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 getActivity().startActivity(new Intent(getActivity(), BaiduMapTestActivity.class));
+            }
+        });
+        tv_record.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), RecordActivity.class));
             }
         });
     }

@@ -33,7 +33,7 @@ import kr.co.namee.permissiongen.PermissionFail;
 import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;
 
-public class SpinnerActivity extends BaseActivity {
+public class TakePhotoActivity extends BaseActivity {
 
     Button upload;
     private TextView mTvPath;
@@ -85,7 +85,7 @@ public class SpinnerActivity extends BaseActivity {
                 // 4、当拍照或从图库选取图片成功后回调
                 mTvPath.setText(outputFile.getAbsolutePath());
                 mTvUri.setText(outputUri.toString());
-                Glide.with(SpinnerActivity.this).load(outputUri).into(mIvPic);
+                Glide.with(TakePhotoActivity.this).load(outputUri).into(mIvPic);
             }
         }, false);//true裁剪，false不裁剪
 
@@ -114,7 +114,7 @@ public class SpinnerActivity extends BaseActivity {
             public void onClick(View v) {
                 //startActivityForResult(getImagePickerIntent(), RESULT_LOAD_IMAGE);
                 // 3、调用从图库选取图片方法
-                PermissionGen.needPermission(SpinnerActivity.this,
+                PermissionGen.needPermission(TakePhotoActivity.this,
                         LQRPhotoSelectUtils.REQ_SELECT_PHOTO,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE}
@@ -127,7 +127,7 @@ public class SpinnerActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 // 3、调用拍照方法
-                PermissionGen.with(SpinnerActivity.this)
+                PermissionGen.with(TakePhotoActivity.this)
                         .addRequestCode(LQRPhotoSelectUtils.REQ_TAKE_PHOTO)
                         .permissions(Manifest.permission.READ_EXTERNAL_STORAGE,
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -328,7 +328,7 @@ public class SpinnerActivity extends BaseActivity {
             public void onClick(DialogInterface dialog, int which) {
                 //这里用来跳到手机设置页，方便用户开启权限
                 Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS);
-                intent.setData(Uri.parse("package:" + SpinnerActivity.this.getPackageName()));
+                intent.setData(Uri.parse("package:" + TakePhotoActivity.this.getPackageName()));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
