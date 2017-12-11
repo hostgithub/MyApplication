@@ -17,7 +17,7 @@ import com.llf.basemodel.base.BaseActivity;
 
 import java.util.ArrayList;
 
-public class TestActivity extends BaseActivity {
+public class SubListShowHideActivity extends BaseActivity {
 
     private ListView listview;
     private ArrayList<String> list;
@@ -66,7 +66,7 @@ public class TestActivity extends BaseActivity {
         public View getView(final int position, View convertView, ViewGroup parent) {
             final MyViewHolder vh;
             if (convertView == null) {
-                convertView = View.inflate(TestActivity.this, R.layout.item_hide_show_all, null);
+                convertView = View.inflate(SubListShowHideActivity.this, R.layout.item_hide_show_all, null);
                 vh = new MyViewHolder(convertView);
                 convertView.setTag(vh);
             } else {
@@ -115,14 +115,14 @@ public class TestActivity extends BaseActivity {
             for (int i = 0; i < 10; i++) {
                 sublist.add("我是第" + i + "个子条目");
             }
-            subAdapter = new SubAdapter(sublist,TestActivity.this);
+            subAdapter = new SubAdapter(sublist,SubListShowHideActivity.this);
             vh.subListView.setAdapter(subAdapter);
             Utility.setListViewHeightBasedOnChildren(vh.subListView);
 
             vh.selectorImg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(TestActivity.this, "被点了", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SubListShowHideActivity.this, "被点了", Toast.LENGTH_SHORT).show();
                     clickPosition = position;//记录点击的position
                     notifyDataSetChanged();//刷新adapter重新填充条目。在重新填充的过程中，被记录的position会做展开或隐藏的动作，具体的判断看上面代码
                     //在此处需要明确的一点是，当adapter执行刷新操作时，整个getview方法会重新执行，也就是条目重新做一次初始化被填充数据。
@@ -137,19 +137,19 @@ public class TestActivity extends BaseActivity {
 //        public void onClick(View v) {
 //            switch (v.getId()) {
 //                case R.id.hide_1:
-//                    Toast.makeText(TestActivity.this, "加密", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SubListShowHideActivity.this, "加密", Toast.LENGTH_SHORT).show();
 //                    break;
 //                case R.id.hide_2:
-//                    Toast.makeText(TestActivity.this, "解密", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SubListShowHideActivity.this, "解密", Toast.LENGTH_SHORT).show();
 //                    break;
 //                case R.id.hide_3:
-//                    Toast.makeText(TestActivity.this, "分享", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SubListShowHideActivity.this, "分享", Toast.LENGTH_SHORT).show();
 //                    break;
 //                case R.id.hide_4:
-//                    Toast.makeText(TestActivity.this, "删除", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SubListShowHideActivity.this, "删除", Toast.LENGTH_SHORT).show();
 //                    break;
 //                case R.id.hide_5:
-//                    Toast.makeText(TestActivity.this, "属性", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SubListShowHideActivity.this, "属性", Toast.LENGTH_SHORT).show();
 //                    break;
 //            }
 //        }

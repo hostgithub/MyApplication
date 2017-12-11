@@ -58,7 +58,7 @@
             android:enabled="true"
             android:process=":remote" />
 
-        <!-- 解决7.0隐私权限 。。。。。没用明白-->
+        <!-- 解决7.0隐私权限 。。。。。没用明白 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.llf.common.provider666"
@@ -87,10 +87,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden" />
-        <activity android:name=".ui.TestActivity" />
+        <activity android:name=".ui.SubListShowHideActivity" />
         <activity android:name=".ui.BaiduMapActivity" />
         <activity android:name=".ui.LoginTestActivity" />
-        <activity android:name=".ui.mainpage.BaiduMapTestActivity"></activity>
+        <activity android:name=".ui.mainpage.BaiduMapTestActivity" />
+        <activity android:name=".ui.SubListActivity"></activity>
     </application>
 
 </manifest>

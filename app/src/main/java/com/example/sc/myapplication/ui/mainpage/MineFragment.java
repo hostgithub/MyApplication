@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.example.sc.myapplication.R;
 import com.example.sc.myapplication.ui.BaiduMapActivity;
 import com.example.sc.myapplication.ui.LoginTestActivity;
-import com.example.sc.myapplication.ui.TestActivity;
+import com.example.sc.myapplication.ui.SubListShowHideActivity;
 import com.example.sc.myapplication.widget.GlideImageLoader;
 import com.llf.basemodel.base.BaseFragment;
 import com.llf.basemodel.commonactivity.SpinnerActivity;
@@ -127,7 +127,7 @@ public class MineFragment extends BaseFragment {
         tv_click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getActivity(), TestActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), SubListShowHideActivity.class));
             }
         });
 

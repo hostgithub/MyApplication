@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" android:orientation="vertical"
-    tools:context="com.example.sc.myapplication.ui.TestActivity">
+    tools:context="com.example.sc.myapplication.ui.SubListShowHideActivity">
 
     <com.youth.banner.Banner
         android:id="@+id/banner"

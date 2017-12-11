@@ -1,1 +1,1 @@
-include ':app',':basemodel',':takephoto'
+include ':app',':basemodel',':takephoto',':baidumapdemo'

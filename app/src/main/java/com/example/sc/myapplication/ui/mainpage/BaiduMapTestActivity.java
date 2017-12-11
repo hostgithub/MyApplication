@@ -26,6 +26,7 @@ import com.baidu.mapapi.search.poi.PoiResult;
 import com.baidu.mapapi.search.poi.PoiSearch;
 import com.baidu.mapapi.search.poi.PoiSortType;
 import com.example.sc.myapplication.R;
+import com.example.sc.myapplication.utils.MyPoiOverlay;
 import com.example.sc.myapplication.utils.PoiOverlay;
 import com.llf.basemodel.base.BaseActivity;
 
@@ -182,15 +183,14 @@ public class BaiduMapTestActivity extends BaseActivity implements OnGetPoiSearch
         }
         if (arg0.error == SearchResult.ERRORNO.NO_ERROR) {
             mBaiduMap.clear();
-//            PoiOverlay overlay = new MyPoiOverlay(mBaiduMap); //自定义 点击事件 和显示
-            PoiOverlay overlay = new PoiOverlay(mBaiduMap);
-//            mBaiduMap.setOnMarkerClickListener(overlay);
+            PoiOverlay overlay = new MyPoiOverlay(mBaiduMap); //自定义 点击事件 和显示
+//            PoiOverlay overlay = new PoiOverlay(mBaiduMap);
+            mBaiduMap.setOnMarkerClickListener(overlay);
             overlay.setData(arg0);
             overlay.addToMap();
             overlay.zoomToSpan();
 
-//            showNearbyArea(center, radius);
-
+            //showNearbyArea(center, radius);
 
             return;
         }
