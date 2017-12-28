@@ -6,6 +6,8 @@ import android.os.StrictMode;
 import com.baidu.mapapi.SDKInitializer;
 import com.llf.basemodel.base.BaseApplication;
 
+import cn.jpush.sms.SMSSDK;
+
 /**
  * Created by wangjiawei on 2017/7/18.
  */
@@ -15,6 +17,7 @@ public class App extends BaseApplication {
     public void onCreate() {
         SDKInitializer.initialize(getApplicationContext());
 
+        SMSSDK.getInstance().initSdk(this);
         super.onCreate();
         /**
          * 解决7.0无法使用file://格式的URI的第二种方法

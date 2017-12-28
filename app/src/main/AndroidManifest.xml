@@ -29,8 +29,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- SD卡读取权限，用户写入离线定位数据 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-
-    <uses-permission  android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name=".App"
@@ -54,6 +53,9 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="cOe7bg8kzzNmul0xYHLvE4YaFETDMAni" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="9fe5f664a1ba3b922dc85c72" /> <!-- </>值来自开发者平台取得的AppKey -->
 
         <service
             android:name="com.baidu.location.f"
@@ -94,8 +96,13 @@
         <activity android:name=".ui.LoginTestActivity" />
         <activity android:name=".ui.mainpage.BaiduMapTestActivity" />
         <activity android:name=".ui.SubListActivity" />
-        <activity android:name=".ui.record.RecordActivity"></activity>
-        <service android:name=".ui.record.RecordingService"/>
+        <activity android:name=".ui.record.RecordActivity" />
+
+        <service android:name=".ui.record.RecordingService" />
+
+        <activity android:name=".ui.jpush.JpushActivity"></activity>
+        <activity android:name=".ui.jpush.MainSmsActivity"></activity>
+        <activity android:name=".ui.jpush.MainVoiceActivity"></activity>
     </application>
 
 </manifest>

@@ -10,8 +10,9 @@ import android.widget.Toast;
 import com.example.sc.myapplication.R;
 import com.example.sc.myapplication.ui.BaiduMapActivity;
 import com.example.sc.myapplication.ui.LoginTestActivity;
-import com.example.sc.myapplication.ui.record.RecordActivity;
 import com.example.sc.myapplication.ui.SubListActivity;
+import com.example.sc.myapplication.ui.jpush.JpushActivity;
+import com.example.sc.myapplication.ui.record.RecordActivity;
 import com.example.sc.myapplication.widget.GlideImageLoader;
 import com.llf.basemodel.base.BaseFragment;
 import com.llf.basemodel.commonactivity.TakePhotoActivity;
@@ -45,6 +46,8 @@ public class MineFragment extends BaseFragment {
     TextView tv_map_poi;
     @Bind(R.id.tv_record)
     TextView tv_record;
+    @Bind(R.id.tv_jpush)
+    TextView tv_jpush;
 
     public static final String[] BANNER_IMGS =
             {
@@ -164,6 +167,12 @@ public class MineFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 getActivity().startActivity(new Intent(getActivity(), RecordActivity.class));
+            }
+        });
+        tv_jpush.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), JpushActivity.class));
             }
         });
     }
