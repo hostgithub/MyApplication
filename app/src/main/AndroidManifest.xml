@@ -100,9 +100,10 @@
 
         <service android:name=".ui.record.RecordingService" />
 
-        <activity android:name=".ui.jpush.JpushActivity"></activity>
-        <activity android:name=".ui.jpush.MainSmsActivity"></activity>
-        <activity android:name=".ui.jpush.MainVoiceActivity"></activity>
+        <activity android:name=".ui.jpush.JpushActivity" />
+        <activity android:name=".ui.jpush.MainSmsActivity" />
+        <activity android:name=".ui.jpush.MainVoiceActivity" />
+        <activity android:name=".ui.imagescrollshow.ImageScrollShowActivity"></activity>
     </application>
 
 </manifest>

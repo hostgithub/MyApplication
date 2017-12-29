@@ -12,33 +12,47 @@
         app:image_scale_type="fit_xy"
         android:layout_height="200dp"/>
 
-    <TextView android:gravity="center"  android:text="@string/welcome"
-        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content" android:id="@+id/tv_click"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:gravity="center"  android:text="@string/welcome"
+                android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content" android:id="@+id/tv_click"/>
 
-    <TextView android:gravity="center"  android:text="拍照拍照拍照拍照"
-        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/tv_click" android:layout_marginTop="15dp"
-        android:layout_height="wrap_content" android:id="@+id/tv_pic"/>
+            <TextView android:gravity="center"  android:text="拍照拍照拍照拍照"
+                android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/tv_click" android:layout_marginTop="15dp"
+                android:layout_height="wrap_content" android:id="@+id/tv_pic"/>
 
-    <TextView android:gravity="center"  android:text="百度地图定位"
-        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/tv_pic" android:layout_marginTop="15dp"
-        android:layout_height="wrap_content" android:id="@+id/tv_map"/>
-    <TextView android:gravity="center"  android:text="百度地图定位搜索周边"
-        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/tv_pic" android:layout_marginTop="15dp"
-        android:layout_height="wrap_content" android:id="@+id/tv_map_poi"/>
-    <TextView android:gravity="center"  android:text="登录测试"
-        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/tv_map" android:layout_marginTop="15dp"
-        android:layout_height="wrap_content" android:id="@+id/tv_login_test"/>
-    <TextView android:gravity="center"  android:text="录音demo"
-        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/tv_map" android:layout_marginTop="15dp"
-        android:layout_height="wrap_content" android:id="@+id/tv_record"/>
-    <TextView android:gravity="center"  android:text="极光短信验证"
-        android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/tv_map" android:layout_marginTop="15dp"
-        android:layout_height="wrap_content" android:id="@+id/tv_jpush"/>
+            <TextView android:gravity="center"  android:text="百度地图定位"
+                android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/tv_pic" android:layout_marginTop="15dp"
+                android:layout_height="wrap_content" android:id="@+id/tv_map"/>
+            <TextView android:gravity="center"  android:text="百度地图定位搜索周边"
+                android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/tv_pic" android:layout_marginTop="15dp"
+                android:layout_height="wrap_content" android:id="@+id/tv_map_poi"/>
+            <TextView android:gravity="center"  android:text="登录测试"
+                android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/tv_map" android:layout_marginTop="15dp"
+                android:layout_height="wrap_content" android:id="@+id/tv_login_test"/>
+            <TextView android:gravity="center"  android:text="录音demo"
+                android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/tv_map" android:layout_marginTop="15dp"
+                android:layout_height="wrap_content" android:id="@+id/tv_record"/>
+            <TextView android:gravity="center"  android:text="极光短信验证"
+                android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/tv_map" android:layout_marginTop="15dp"
+                android:layout_height="wrap_content" android:id="@+id/tv_jpush"/>
+            <TextView android:gravity="center"  android:text="图片随着列表滚动逐渐显示"
+                android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/tv_map" android:layout_marginTop="15dp"
+                android:layout_height="wrap_content" android:id="@+id/tv_image_show"/>
+        </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>
