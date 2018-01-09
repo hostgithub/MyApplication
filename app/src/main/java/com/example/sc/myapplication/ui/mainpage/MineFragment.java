@@ -8,15 +8,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sc.myapplication.R;
-import com.example.sc.myapplication.ui.BaiduMapActivity;
+import com.example.sc.myapplication.ui.AddAnimShowActivity;
 import com.example.sc.myapplication.ui.LoginTestActivity;
 import com.example.sc.myapplication.ui.SubListActivity;
+import com.example.sc.myapplication.ui.baidumap.BaiduMapActivity;
+import com.example.sc.myapplication.ui.baidumap.BaiduMapTestActivity;
 import com.example.sc.myapplication.ui.imagescrollshow.ImageScrollShowActivity;
 import com.example.sc.myapplication.ui.jpush.JpushActivity;
 import com.example.sc.myapplication.ui.record.RecordActivity;
 import com.example.sc.myapplication.widget.GlideImageLoader;
 import com.llf.basemodel.base.BaseFragment;
 import com.llf.basemodel.commonactivity.TakePhotoActivity;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
+import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -51,6 +59,10 @@ public class MineFragment extends BaseFragment {
     TextView tv_jpush;
     @Bind(R.id.tv_image_show)
     TextView tv_image_show;
+    @Bind(R.id.tv_add_anim_show)
+    TextView tv_add_anim_show;
+    @Bind(R.id.refreshLayout)
+    SmartRefreshLayout refreshLayout;
 
     public static final String[] BANNER_IMGS =
             {
@@ -134,6 +146,22 @@ public class MineFragment extends BaseFragment {
             }
         });
 
+        //设置 Header 为 Material样式
+        //refreshLayout.setRefreshHeader(new MaterialHeader(this).setShowBezierWave(true));
+        //设置 Footer 为 球脉冲
+        refreshLayout.setRefreshFooter(new BallPulseFooter(getContext()).setSpinnerStyle(SpinnerStyle.Scale));
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                refreshlayout.finishRefresh(2000/*,false*/);//传入false表示刷新失败
+            }
+        });
+        refreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
+            @Override
+            public void onLoadmore(RefreshLayout refreshlayout) {
+                refreshlayout.finishLoadmore(2000/*,false*/);//传入false表示加载失败
+            }
+        });
 
         tv_click.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,6 +210,12 @@ public class MineFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 getActivity().startActivity(new Intent(getActivity(), ImageScrollShowActivity.class));
+            }
+        });
+        tv_add_anim_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), AddAnimShowActivity.class));
             }
         });
     }

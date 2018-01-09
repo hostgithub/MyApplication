@@ -1,4 +1,4 @@
-package com.example.sc.myapplication.ui;
+package com.example.sc.myapplication.ui.baidumap;
 
 import android.widget.TextView;
 

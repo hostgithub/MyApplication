@@ -67,9 +67,9 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         mPresenter = new MainPresenter(this);
         mTitles = getResources().getStringArray(R.array.main_titles);
         fragments = new BaseFragment[mTitles.length];
-        fragments[0] = GirlFragment.getInstance();
-        fragments[1] = PageMainFragment.getInstance();
-        fragments[2] = CollFragment.getInstance();
+        fragments[0] = PageMainFragment.getInstance();
+        fragments[1] = CollFragment.getInstance();
+        fragments[2] = GirlFragment.getInstance();
         fragments[3] = MineFragment.getInstance();
         BaseFragmentAdapter mAdapter = new BaseFragmentAdapter(getSupportFragmentManager(), fragments);
         mViewPager.setAdapter(mAdapter);

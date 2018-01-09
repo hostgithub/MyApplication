@@ -92,9 +92,9 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".ui.SubListShowHideActivity" />
-        <activity android:name=".ui.BaiduMapActivity" />
+        <activity android:name=".ui.baidumap.BaiduMapActivity" />
         <activity android:name=".ui.LoginTestActivity" />
-        <activity android:name=".ui.mainpage.BaiduMapTestActivity" />
+        <activity android:name=".ui.baidumap.BaiduMapTestActivity" />
         <activity android:name=".ui.SubListActivity" />
         <activity android:name=".ui.record.RecordActivity" />
 
@@ -103,7 +103,8 @@
         <activity android:name=".ui.jpush.JpushActivity" />
         <activity android:name=".ui.jpush.MainSmsActivity" />
         <activity android:name=".ui.jpush.MainVoiceActivity" />
-        <activity android:name=".ui.imagescrollshow.ImageScrollShowActivity"></activity>
+        <activity android:name=".ui.imagescrollshow.ImageScrollShowActivity" />
+        <activity android:name=".ui.AddAnimShowActivity"></activity>
     </application>
 
 </manifest>
